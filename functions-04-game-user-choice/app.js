@@ -9,7 +9,7 @@ const RESULT_COMPUTER_WINS = "THE COMPUTER";
 
 let nameValue = prompt("what is your name");
 let gameIsRunning = false;
-
+ 
 const getPlayerChoice = () => {
   const selection = prompt(
     `${ROCK}, ${PAPER} or ${SCISSORS}?`,
