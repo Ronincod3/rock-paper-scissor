@@ -27,3 +27,19 @@ console.log(
     sumUp1(1, 31, 23, 12, 3, 15, 34, 4, 37, 2, 31, 23, 1)
 );
 ```
+
+[**Lesson 139 - FUNCTION INSIDE FUNCTIONt**](https://github.com/Ronincod3/rock-paper-scissor/commit/874c41cee79db61f3136e283f955d3fb2da585de)
+```
+const sumUp1 = (...numbers) => {
+const validateNumber = (number) => {
+  return isNaN(number) ? 2 : number;
+}
+  let sum = 0;
+  for (const num of numbers) {
+    sum += num;
+  for(const num of numbers) {
+    sum += validateNumber(num);
+  }
+  return sum;
+};
+```
