@@ -28,7 +28,7 @@ console.log(
 );
 ```
 
-[**Lesson 139 - FUNCTION INSIDE FUNCTIONt**](https://github.com/Ronincod3/rock-paper-scissor/commit/874c41cee79db61f3136e283f955d3fb2da585de)
+[**Lesson 138 - FUNCTION INSIDE FUNCTIONt**](https://github.com/Ronincod3/rock-paper-scissor/commit/874c41cee79db61f3136e283f955d3fb2da585de)
 ```
 const sumUp1 = (...numbers) => {
 const validateNumber = (number) => {
@@ -42,4 +42,29 @@ const validateNumber = (number) => {
   }
   return sum;
 };
+```
+
+[**Lesson 139 - CREATING CALLBACK FUNCTION**](https://github.com/Ronincod3/rock-paper-scissor/commit/874c41cee79db61f3136e283f955d3fb2da585de)
+```
+const sumUp1 = (resultHandler, ...numbers) => {  //first parameter acts as a function
+const validateNumber = (number) => {
+  return isNaN(number) ? 2 : number;
+}
+  let sum = 0;
+  for(const num of numbers) {
+    sum += validateNumber(num);
+  }
+resultHandler(sum);  //result handler parameter is called
+}
+```
+
+```
+const showResult = (result) => {    //a new function is defined
+  alert(`The result is ` + result);
+}
+```
+
+```
+    sumUp1(showResult, 31, 23, 12, 3, 15, 34, 4, 37, 2, 31, 23, 1); //the first parameter passed "showResult" takes the first parameter of sumUp1 function
+    //it then takes the sum result and passes it as a parameter to "showReult" as "result".
 ```
