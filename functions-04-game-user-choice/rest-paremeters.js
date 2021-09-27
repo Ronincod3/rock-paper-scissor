@@ -17,7 +17,7 @@ console.log(
 
 // ELEGANT SOLUTION WITH REST (...parameter);
 
-const sumUp1 = (...numbers) => {
+const sumUp1 = (resultHandler, ...numbers) => {  //first parameter acts as a function
 const validateNumber = (number) => {
   return isNaN(number) ? 2 : number;
 }
@@ -25,12 +25,15 @@ const validateNumber = (number) => {
   for(const num of numbers) {
     sum += validateNumber(num);
   }
-  return sum;
+  resultHandler(sum);  //result handler parameter is called
 }
 
-alert(`ELEGANT SOLUTION ...numbers UPDATED VERSION`  +
-    sumUp1('nothing', 31, 23, 12, 3, 15, 34, 4, 37, 2, 31, 23, 1)
-);
+const showResult = (result) => {    //a new function is defined
+  alert(`The result is ` + result);
+}
+
+    sumUp1(showResult, 31, 23, 12, 3, 15, 34, 4, 37, 2, 31, 23, 1); //the first parameter passed "showResult" takes the first parameter of sumUp1 function
+    //it then takes the sum result and passes it as a parameter to "showReult" as "result".
 
 // CLASSIC WAY - DEPRECATED, NOT LONGER USED "ARGUMENTS"
 
