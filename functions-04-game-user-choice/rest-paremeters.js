@@ -7,8 +7,7 @@
 const sumUp = (numbers) => {
   let sum = 0;
   for (const num of numbers) {
-    sum += num;
-  }
+    sum += num;  }
   return sum;
 };
 
@@ -19,15 +18,18 @@ console.log(
 // ELEGANT SOLUTION WITH REST (...parameter);
 
 const sumUp1 = (...numbers) => {
+const validateNumber = (number) => {
+  return isNaN(number) ? 2 : number;
+}
   let sum = 0;
-  for (const num of numbers) {
-    sum += num;
+  for(const num of numbers) {
+    sum += validateNumber(num);
   }
   return sum;
-};
-console.log(
-  "ELEGANT SOLUTION ...numbers UPDATED VERSION " +
-    sumUp1(1, 31, 23, 12, 3, 15, 34, 4, 37, 2, 31, 23, 1)
+}
+
+alert(`ELEGANT SOLUTION ...numbers UPDATED VERSION`  +
+    sumUp1('nothing', 31, 23, 12, 3, 15, 34, 4, 37, 2, 31, 23, 1)
 );
 
 // CLASSIC WAY - DEPRECATED, NOT LONGER USED "ARGUMENTS"
