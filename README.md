@@ -68,3 +68,9 @@ const showResult = (result) => {    //a new function is defined
     sumUp1(showResult, 31, 23, 12, 3, 15, 34, 4, 37, 2, 31, 23, 1); //the first parameter passed "showResult" takes the first parameter of sumUp1 function
     //it then takes the sum result and passes it as a parameter to "showReult" as "result".
 ```
+
+[**Lesson 140 - BINDING**](https://github.com/Ronincod3/rock-paper-scissor/commit/c783ab39dd5599eeec16ef8824b691c07846a6dc?branch=c783ab39dd5599eeec16ef8824b691c07846a6dc&diff=unified)
+```
+combine(par1, operation, ...numbers);
+combine(newResult.bind(this, 'The sum of all the numbers is: '), "ADD", 1,2,3,4,5,6,7,8,9);
+```
